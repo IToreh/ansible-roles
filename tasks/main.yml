@@ -1,0 +1,14 @@
+---
+- name: Update cache and install nginx
+  apt:
+      update_cache: yes
+      name: nginx
+  
+- name: Copy custom Nginx configuration
+  template:
+      src: "{{ path_to_project }}nginx-web.conf.j2"
+      dest: "{{ path_to_nginx_conf }}"
+      owner: root
+      group: root
+      mode: '0644'
+  notify: Restart Nginx

@@ -1,0 +1,6 @@
+---
+# defaults file for nginx-role
+path_to_project: /home/vagrant/ansible_shlink/roles/nginx-role/templates/
+server_name: 192.168.33.4
+proxy_pass: http://192.168.33.5/
+path_to_nginx_conf: /etc/nginx/nginx.conf
